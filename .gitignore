@@ -6,3 +6,16 @@ yarn-error.log
 # Build directory
 /public
 .DS_Store
+
+# IDE Specific
+nbproject
+.~lock.*
+.buildpath
+.idea
+.project
+.settings
+.vscode
+composer.lock
+*.sublime-workspace
+*.swp
+*.swo
