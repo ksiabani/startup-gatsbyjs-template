@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "gatsby";
 
 // Subcomponents
 const Tile = ({ data: { heading, description, icon } }) => (
@@ -7,9 +8,9 @@ const Tile = ({ data: { heading, description, icon } }) => (
       <img src={`images/${icon}`} alt={heading} />
     </div>
     <div className="desc">
-      <a href="#">
+      <Link to="">
         <h4>{heading}</h4>
-      </a>
+      </Link>
       <p>{description}</p>
     </div>
   </div>

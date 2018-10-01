@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from "gatsby";
 import './_header.scss';
 
 const Header = ({isScrolled}) =>
@@ -12,16 +13,16 @@ const Header = ({isScrolled}) =>
           <nav id="nav-menu-container">
             <ul className="nav-menu">
               {/*<li className="menu-active"><a href="index.html#home">Home</a></li>*/}
-              <li><a href="#consulting">Consulting</a></li>
-              <li><a href="#technology">Technology</a></li>
-              <li className="menu-has-children"><a href>Open Source</a>
+              <li><Link to="#consulting">Consulting</Link></li>
+              <li><Link to="#technology">Technology</Link></li>
+              <li className="menu-has-children"><Link to="">Open Source</Link>
                 <ul>
-                  <li><a href="generic.html">Reboard</a></li>
-                  <li><a href="elements.html">TippetCMS</a></li>
+                  <li><Link to="generic.html">Reboard</Link></li>
+                  <li><Link to="elements.html">TippetCMS</Link></li>
                 </ul>
               </li>
-              <li><a href="#blog">Blog</a></li>
-              <li><a href="#contact-us">Contact</a></li>
+              <li><Link to="#blog">Blog</Link></li>
+              <li><Link to="#contact-us">Contact</Link></li>
             </ul>
           </nav>
           {/* #nav-menu-container */}

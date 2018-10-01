@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "gatsby";
 
 const Banner = ({ data: { heading, description, btnTxt }, elemId }) => (
   <section className="banner-area" id="{elemId}">
@@ -7,9 +8,9 @@ const Banner = ({ data: { heading, description, btnTxt }, elemId }) => (
         <div className="banner-content col-lg-7">
           <h1>{heading}</h1>
           <p className="pt-20 pb-20">{description}</p>
-          <a className="primary-btn" href="">
+          <Link className="primary-btn" to="">
             {btnTxt}
-          </a>
+          </Link>
         </div>
       </div>
     </div>
