@@ -2,69 +2,9 @@
   "name": "My awesome site",
   "templates": [
     {
-      "name": "blog-summary",
-      "title": "Blog Summary",
-      "preview": "https://picsum.photos/50/60/?image=210",
-      "components": [
-        {
-          "name": "banner",
-          "title": "Banner",
-          "icon": "view_day",
-          "description": "Lorem ipsum dolor sit amet",
-          "preview": "https://picsum.photos/150/50/?image=200",
-          "position": 1,
-          "data": {
-            "title": "Hello there yo!",
-            "text": "this is some description for my banner!"
-          }
-        },
-        {
-          "name": "blog-index",
-          "title": "Blog Summary",
-          "icon": "short_text",
-          "description": "Lorem ipsum dolor sit amet",
-          "preview": "https://picsum.photos/150/50/?image=120",
-          "position": 2,
-          "data": {
-            "title": "Hello there yo!",
-            "text": "this is some description for my banner!"
-          }
-        }
-      ]
-    },
-    {
-      "name": "blogPost",
-      "title": "Blog post",
-      "preview": "https://picsum.photos/50/60/?image=620",
-      "components": [
-        {
-          "name": "banner",
-          "title": "Banner",
-          "icon": "view_day",
-          "description": "Lorem ipsum dolor sit amet",
-          "preview": "https://picsum.photos/150/50/?image=200",
-          "position": 1,
-          "data": {
-            "heading": "Hello there yo!",
-            "description": "this is some description for my banner!"
-          }
-        },
-        {
-          "name": "textEditor",
-          "icon": "subject",
-          "description": "Lorem ipsum dolor sit amet",
-          "preview": "https://picsum.photos/150/50/?image=870",
-          "position": 2,
-          "data": {
-            "title": "Hello there yo!",
-            "text": "this is some description for my banner!"
-          }
-        }
-      ]
-    },
-    {
-      "name": "homePage",
-      "title": "Homepage",
+      "name": "index",
+      "title": "Home",
+      "isIndex": true,
       "preview": "https://picsum.photos/50/60/?image=501",
       "components": [
         {
@@ -78,7 +18,8 @@
             "heading": "Some cool motto!",
             "description": "Some vague description for my georgeous banner!",
             "btnTxt": "Join us!"
-          }
+          },
+          "dependencies": []
         },
         {
           "name": "grid",
