@@ -39,9 +39,9 @@ const IndexTemplate = () => {
         return (
           <Layout>
             {components.map((com, i) => {
-              const Component = com.name
+              const Component = com.name.toLowerCase()
               switch (Component) {
-                case 'Banner':
+                case 'banner':
                   return (
                     <Banner
                       data={com.data}
@@ -50,7 +50,7 @@ const IndexTemplate = () => {
                       key={i}
                     />
                   )
-                case 'Grid':
+                case 'grid':
                   return (
                     <Grid
                       data={com.data}
