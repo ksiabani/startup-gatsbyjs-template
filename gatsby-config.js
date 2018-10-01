@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Startup'
   },
-  pathPrefix: process.env.PATH_PREFIX || "",
+  pathPrefix: process.env.PATH_PREFIX || "/",
   plugins: [
     'gatsby-plugin-react-helmet',
     {
