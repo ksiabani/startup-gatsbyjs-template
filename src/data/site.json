@@ -5,6 +5,7 @@
       "name": "index",
       "title": "Home",
       "isIndex": true,
+      "slug": "/",
       "preview": "https://picsum.photos/50/60/?image=501",
       "components": [
         {
