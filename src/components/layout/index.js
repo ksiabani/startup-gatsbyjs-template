@@ -4,7 +4,6 @@ import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 import Footer from '../footer';
 import Header from '../header';
-// import './layout'
 import '../../sass/style.scss';
 
 class Index extends React.Component {
