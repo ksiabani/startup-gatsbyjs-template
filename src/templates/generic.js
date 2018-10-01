@@ -1,14 +1,14 @@
 import React from 'react'
 import Layout from '../components/layout'
-import Banner from '../components/banner'
-import Grid from '../components/grid'
+import Hero from '../components/hero'
+import Editor from '../components/editor'
 import { graphql, StaticQuery } from 'gatsby'
 
-const IndexTemplate = ({data}) => {
+const GenericTemplate = ({data}) => {
   return (
     <StaticQuery
       query={graphql`
-        query IndexQuery($id: String) {
+        query GenericQuery($id: String) {
           pagesJson(id: { eq: $id }) {
             components {
               id
@@ -18,15 +18,7 @@ const IndexTemplate = ({data}) => {
               data {
                 heading
                 description
-                btnTxt
-              }
-              dependencies {
-                name
-                data {
-                  heading
-                  description
-                  icon
-                }
+                html
               }
             }
           }
@@ -41,20 +33,18 @@ const IndexTemplate = ({data}) => {
             {components.map((com, i) => {
               const Component = com.name.toLowerCase()
               switch (Component) {
-                case 'banner':
+                case 'hero':
                   return (
-                    <Banner
+                    <Hero
                       data={com.data}
-                      deps={com.dependencies}
                       elemId={com.title.toLowerCase()}
                       key={i}
                     />
                   )
-                case 'grid':
+                case 'editor':
                   return (
-                    <Grid
+                    <Editor
                       data={com.data}
-                      deps={com.dependencies}
                       elemId={com.title.toLowerCase()}
                       key={i}
                     />
@@ -68,4 +58,4 @@ const IndexTemplate = ({data}) => {
   )
 }
 
-export default IndexTemplate
+export default GenericTemplate

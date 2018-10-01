@@ -8,7 +8,7 @@ const Header = ({isScrolled}) =>
       <div className="container">
         <div className="row align-items-center justify-content-between d-flex">
           <div id="logo">
-            <a href="index.html"><img src="images/logo.png" alt="Startup"/></a>
+            <a href="index.html"><img src="/images/logo.png" alt="Startup"/></a>
           </div>
           <nav id="nav-menu-container">
             <ul className="nav-menu">
