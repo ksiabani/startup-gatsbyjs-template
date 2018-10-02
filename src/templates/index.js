@@ -4,14 +4,15 @@ import Banner from '../components/banner'
 import Grid from '../components/grid'
 import { graphql, StaticQuery } from 'gatsby'
 
-const IndexTemplate = (props) => {
-  // console.log(props);
+const IndexTemplate = ({ pageContext }) => {
   return (
     <StaticQuery
       query={query}
       render={data => {
-        console.log(data)
-        const components = data.pagesJson.components.sort(
+        const page = data.allPagesJson.edges.find(
+          edge => edge.node.id === pageContext.id
+        )
+        const components = page.node.components.sort(
           (a, b) => a.position - b.position
         )
         return (
@@ -23,7 +24,6 @@ const IndexTemplate = (props) => {
                   return (
                     <Banner
                       data={com.data}
-                      deps={com.dependencies}
                       elemId={com.title.toLowerCase()}
                       key={i}
                     />
@@ -37,6 +37,8 @@ const IndexTemplate = (props) => {
                       key={i}
                     />
                   )
+                default:
+                  return ""
               }
             })}
           </Layout>
@@ -47,29 +49,62 @@ const IndexTemplate = (props) => {
 }
 
 const query = graphql`
-        query IndexQuery ($pageId: String!) {
-          pagesJson(id: { eq: $pageId }) {
-            components {
-              id
+  query {
+    allPagesJson {
+      edges {
+        node {
+          id
+          components {
+            name
+            title
+            position
+            data {
+              heading
+              description
+              btnTxt
+            }
+            dependencies {
               name
-              title
-              position
               data {
                 heading
                 description
-                btnTxt
-              }
-              dependencies {
-                name
-                data {
-                  heading
-                  description
-                  icon
-                }
+                icon
               }
             }
           }
         }
-      `
+      }
+    }
+  }
+`
+
+// This doesn't work yet.
+// Despite the docs, id is never passed to GraphQL.
+// Leaving this here for later use maybe.
+// const query = graphql`
+//         query IndexQuery ($id: String!) {
+//           pagesJson(id: { eq: $id }) {
+//             components {
+//               id
+//               name
+//               title
+//               position
+//               data {
+//                 heading
+//                 description
+//                 btnTxt
+//               }
+//               dependencies {
+//                 name
+//                 data {
+//                   heading
+//                   description
+//                   icon
+//                 }
+//               }
+//             }
+//           }
+//         }
+//       `
 
 export default IndexTemplate

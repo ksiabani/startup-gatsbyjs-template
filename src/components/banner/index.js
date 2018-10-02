@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "gatsby";
 
 const Banner = ({ data: { heading, description, btnTxt }, elemId }) => (
-  <section className="banner-area" id="{elemId}">
+  <section className="banner-area" id={elemId}>
     <div className="container">
       <div className="row fullscreen d-flex align-items-center justify-content-center">
         <div className="banner-content col-lg-7">

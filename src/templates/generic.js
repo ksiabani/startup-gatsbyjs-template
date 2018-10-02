@@ -4,28 +4,15 @@ import Hero from '../components/hero'
 import Editor from '../components/editor'
 import { graphql, StaticQuery } from 'gatsby'
 
-const GenericTemplate = () => {
+const GenericTemplate = ({ pageContext }) => {
   return (
     <StaticQuery
-      query={graphql`
-        query GenericQuery($id: String!) {
-          pagesJson(id: { eq: $id }) {
-            components {
-              id
-              name
-              title
-              position
-              data {
-                heading
-                description
-                html
-              }
-            }
-          }
-        }
-      `}
+      query={query}
       render={data => {
-        const components = data.pagesJson.components.sort(
+        const page = data.allPagesJson.edges.find(
+          edge => edge.node.id === pageContext.id
+        )
+        const components = page.node.components.sort(
           (a, b) => a.position - b.position
         )
         return (
@@ -49,6 +36,8 @@ const GenericTemplate = () => {
                       key={i}
                     />
                   )
+                default:
+                  return ""
               }
             })}
           </Layout>
@@ -57,5 +46,27 @@ const GenericTemplate = () => {
     />
   )
 }
+
+const query = graphql`
+  query {
+    allPagesJson {
+      edges {
+        node {
+          id
+          components {
+            name
+            title
+            position
+            data {
+              heading
+              description
+              html
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 export default GenericTemplate

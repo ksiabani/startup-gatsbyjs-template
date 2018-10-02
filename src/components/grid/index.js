@@ -21,7 +21,7 @@ const components = {
 }
 
 // Component
-const Grid = ({ data: { heading, description, icon }, deps, elemId }) => (
+const Grid = ({ data: { heading, description }, deps, elemId }) => (
   <section className="we-offer-area section-gap" id={elemId}>
     <div className="container">
       <div className="row d-flex justify-content-center">
