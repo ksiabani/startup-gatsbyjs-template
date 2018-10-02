@@ -4,11 +4,11 @@ import Hero from '../components/hero'
 import Editor from '../components/editor'
 import { graphql, StaticQuery } from 'gatsby'
 
-const GenericTemplate = ({data}) => {
+const GenericTemplate = () => {
   return (
     <StaticQuery
       query={graphql`
-        query GenericQuery($id: String) {
+        query GenericQuery($id: String!) {
           pagesJson(id: { eq: $id }) {
             components {
               id

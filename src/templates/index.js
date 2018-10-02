@@ -4,35 +4,13 @@ import Banner from '../components/banner'
 import Grid from '../components/grid'
 import { graphql, StaticQuery } from 'gatsby'
 
-const IndexTemplate = ({data}) => {
+const IndexTemplate = (props) => {
+  // console.log(props);
   return (
     <StaticQuery
-      query={graphql`
-        query IndexQuery($id: String) {
-          pagesJson(id: { eq: $id }) {
-            components {
-              id
-              name
-              title
-              position
-              data {
-                heading
-                description
-                btnTxt
-              }
-              dependencies {
-                name
-                data {
-                  heading
-                  description
-                  icon
-                }
-              }
-            }
-          }
-        }
-      `}
+      query={query}
       render={data => {
+        console.log(data)
         const components = data.pagesJson.components.sort(
           (a, b) => a.position - b.position
         )
@@ -67,5 +45,31 @@ const IndexTemplate = ({data}) => {
     />
   )
 }
+
+const query = graphql`
+        query IndexQuery ($pageId: String!) {
+          pagesJson(id: { eq: $pageId }) {
+            components {
+              id
+              name
+              title
+              position
+              data {
+                heading
+                description
+                btnTxt
+              }
+              dependencies {
+                name
+                data {
+                  heading
+                  description
+                  icon
+                }
+              }
+            }
+          }
+        }
+      `
 
 export default IndexTemplate

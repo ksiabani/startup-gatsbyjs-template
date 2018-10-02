@@ -18,7 +18,6 @@ exports.createPages = ({ graphql, actions }) => {
       }
     `).then(result => {
       result.data.allPagesJson.edges.forEach(({ node }) => {
-        console.warn(node);
         createPage({
           path: node.slug,
           component: path.resolve(`./src/templates/${node.template}.js`),
