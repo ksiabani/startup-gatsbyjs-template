@@ -8,7 +8,7 @@
     "preview": "https://picsum.photos/50/60/?image=501",
     "components": [
       {
-        "id": "J6S5uVeL_",
+        "id": "J6S5uVeL_0",
         "name": "banner",
         "title": "Banner",
         "icon": "view_day",
@@ -65,7 +65,7 @@
     ]
   },
   {
-    "id": "a234567890",
+    "id": "a2h45d7e9e",
     "template": "generic",
     "title": "Generic",
     "slug": "/generic/",
@@ -73,7 +73,7 @@
     "preview": "https://picsum.photos/50/60/?image=511",
     "components": [
       {
-        "id": "J6S5uVeL_",
+        "id": "J6S5uVeL_d",
         "name": "hero",
         "title": "Hero",
         "icon": "view_day",
