@@ -3,7 +3,7 @@ import Layout from '../components/layout'
 import Editor from '../components/editor'
 import { graphql, StaticQuery } from 'gatsby'
 
-const GenericTemplate = ({ pageContext }) => {
+const BlogPostTemplate = ({ pageContext }) => {
   return (
     <StaticQuery
       query={query}
@@ -60,4 +60,4 @@ const query = graphql`
   }
 `
 
-export default GenericTemplate
+export default BlogPostTemplate

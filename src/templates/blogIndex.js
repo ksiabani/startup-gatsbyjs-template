@@ -1,13 +1,22 @@
 import React from 'react'
 import Layout from '../components/layout'
-import Editor from '../components/editor'
+import Excerpts from '../components/excerpts'
 import { graphql, StaticQuery } from 'gatsby'
+import Hero from '../components/hero'
 
-const GenericTemplate = ({ pageContext }) => {
+const IndexTemplate = ({ pageContext }) => {
   return (
     <StaticQuery
       query={query}
       render={data => {
+        const excerpts = data.allPagesJson.edges
+          .filter(edge => edge.node.template === 'blogPost')
+          .map(edge =>
+            edge.node.components
+              .find(com => com.name === 'editor')
+              .data
+          )
+        console.log(excerpts)
         const page = data.allPagesJson.edges.find(
           edge => edge.node.id === pageContext.id
         )
@@ -19,16 +28,24 @@ const GenericTemplate = ({ pageContext }) => {
             {components.map((com, i) => {
               const Component = com.name.toLowerCase()
               switch (Component) {
-                case 'editor':
+                case 'hero':
                   return (
-                    <Editor
+                    <Hero
                       data={com.data}
                       elemId={com.title.toLowerCase()}
                       key={i}
                     />
                   )
+                case 'excerpts':
+                  return (
+                    <Excerpts
+                      excerpts={excerpts}
+                      elemId={com.title.toLowerCase()}
+                      key={i}
+                    />
+                  )
                 default:
-                  return ""
+                  return ''
               }
             })}
           </Layout>
@@ -44,10 +61,10 @@ const query = graphql`
       edges {
         node {
           id
+          template
           components {
             name
             title
-            position
             data {
               heading
               description
@@ -59,5 +76,4 @@ const query = graphql`
     }
   }
 `
-
-export default GenericTemplate
+export default IndexTemplate
