@@ -16,7 +16,6 @@ const IndexTemplate = ({ pageContext }) => {
               .find(com => com.name === 'editor')
               .data
           )
-        console.log(excerpts)
         const page = data.allPagesJson.edges.find(
           edge => edge.node.id === pageContext.id
         )
