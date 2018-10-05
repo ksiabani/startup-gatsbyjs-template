@@ -1,8 +1,15 @@
-import React from 'react';
-import { Link } from "gatsby";
+import React from 'react'
+import { Link } from 'gatsby'
 
 const Banner = ({ data: { heading, description, btnTxt }, elemId }) => (
-  <section className="banner-area" id={elemId}>
+  <section
+    className="banner-area"
+    id={elemId}
+    style={{
+      background: 'url(images/banner.jpeg) 50%',
+      backgroundSize: 'cover',
+    }}
+  >
     <div className="container">
       <div className="row fullscreen d-flex align-items-center justify-content-center">
         <div className="banner-content col-lg-7">
@@ -17,4 +24,4 @@ const Banner = ({ data: { heading, description, btnTxt }, elemId }) => (
   </section>
 )
 
-export default Banner;
+export default Banner
