@@ -9,21 +9,14 @@ const Header = ({isScrolled}) =>
       <div className="container">
         <div className="row align-items-center justify-content-between d-flex">
           <div id="logo">
-            <a href="index.html"><img src={withPrefix("images/logo.png")} alt="Startup"/></a>
+            <Link to="/"><img src={withPrefix("images/logo.png")} alt="Startup"/></Link>
           </div>
           <nav id="nav-menu-container">
             <ul className="nav-menu">
-              {/*<li className="menu-active"><a href="index.html#home">Home</a></li>*/}
-              <li><Link to="#consulting">Consulting</Link></li>
-              <li><Link to="#technology">Technology</Link></li>
-              <li className="menu-has-children"><Link to="">Open Source</Link>
-                <ul>
-                  <li><Link to="generic.html">Reboard</Link></li>
-                  <li><Link to="elements.html">TippetCMS</Link></li>
-                </ul>
-              </li>
-              <li><Link to="#blog">Blog</Link></li>
-              <li><Link to="#contact-us">Contact</Link></li>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="#services">Services</Link></li>
+              <li><Link to="/blog/">Blog</Link></li>
+              <li><Link to="/generic/">Generic</Link></li>
             </ul>
           </nav>
           {/* #nav-menu-container */}

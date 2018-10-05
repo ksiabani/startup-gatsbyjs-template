@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
 const Excerpt = ({ heading, html }) => (
   <div className="excerpt">
