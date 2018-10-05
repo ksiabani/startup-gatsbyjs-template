@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
-import Footer from '../footer';
-import Header from '../header';
+import Footer from '../footer/footer';
+import Header from '../header/header';
 import '../../sass/style.scss';
 
-class Index extends React.Component {
+class Layout extends React.Component {
 
   constructor(props) {
     super(props)
@@ -60,8 +60,8 @@ class Index extends React.Component {
   }
 }
 
-Index.propTypes = {
+Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Index
+export default Layout

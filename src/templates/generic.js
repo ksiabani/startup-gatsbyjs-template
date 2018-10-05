@@ -1,6 +1,6 @@
 import React from 'react'
-import Layout from '../components/layout'
-import Editor from '../components/editor'
+import Layout from '../components/layout/layout'
+import Editor from '../components/post/post'
 import { graphql, StaticQuery } from 'gatsby'
 
 const GenericTemplate = ({ pageContext }) => {

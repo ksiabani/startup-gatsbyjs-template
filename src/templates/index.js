@@ -1,7 +1,7 @@
 import React from 'react'
-import Layout from '../components/layout'
-import Banner from '../components/banner'
-import Grid from '../components/grid'
+import Layout from '../components/layout/layout'
+import Banner from '../components/banner/banner'
+import Grid from '../components/grid/grid'
 import { graphql, StaticQuery } from 'gatsby'
 
 const IndexTemplate = ({ pageContext }) => {

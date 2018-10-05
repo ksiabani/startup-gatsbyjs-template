@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "gatsby";
-import './_header.scss';
+import './header.scss';
 import { withPrefix } from 'gatsby'
 
 const Header = ({isScrolled}) =>
@@ -19,7 +19,6 @@ const Header = ({isScrolled}) =>
               <li><Link to="/generic/">Generic</Link></li>
             </ul>
           </nav>
-          {/* #nav-menu-container */}
         </div>
       </div>
     </header>

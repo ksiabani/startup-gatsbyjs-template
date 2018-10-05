@@ -1,8 +1,8 @@
 import React from 'react'
-import Layout from '../components/layout'
-import Excerpts from '../components/excerpts'
+import Layout from '../components/layout/layout'
+import Hero from '../components/hero/hero'
+import Excerpts from '../components/excerpts/excerpts'
 import { graphql, StaticQuery } from 'gatsby'
-import Hero from '../components/hero'
 
 const IndexTemplate = ({ pageContext }) => {
   return (
@@ -11,11 +11,10 @@ const IndexTemplate = ({ pageContext }) => {
       render={data => {
         const excerpts = data.allPagesJson.edges
           .filter(edge => edge.node.template === 'blogPost')
-          .map(edge =>
-            edge.node.components
-              .find(com => com.name === 'editor')
-              .data
-          )
+          .map(edge => ({
+            ...edge.node.components.find(com => com.name === 'editor').data,
+            slug: edge.node.slug,
+          }))
         const page = data.allPagesJson.edges.find(
           edge => edge.node.id === pageContext.id
         )
@@ -61,6 +60,7 @@ const query = graphql`
         node {
           id
           template
+          slug
           components {
             name
             title

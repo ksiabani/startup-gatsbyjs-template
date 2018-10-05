@@ -1,6 +1,6 @@
 import React from 'react'
-import Layout from '../components/layout'
-import Editor from '../components/editor'
+import Layout from '../components/layout/layout'
+import Post from '../components/post/post'
 import { graphql, StaticQuery } from 'gatsby'
 
 const BlogPostTemplate = ({ pageContext }) => {
@@ -21,7 +21,7 @@ const BlogPostTemplate = ({ pageContext }) => {
               switch (Component) {
                 case 'editor':
                   return (
-                    <Editor
+                    <Post
                       data={com.data}
                       elemId={com.title.toLowerCase()}
                       key={i}
