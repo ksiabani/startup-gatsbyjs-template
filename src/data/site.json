@@ -3,7 +3,7 @@
   "templates": [
     {
       "name": "index",
-      "title": "Home",
+      "title": "Home page",
       "isIndex": true,
       "preview": "https://picsum.photos/50/60/?image=501",
       "components": [
@@ -64,7 +64,7 @@
     },
     {
       "name": "generic",
-      "title": "Generic",
+      "title": "Generic page",
       "isIndex": false,
       "preview": "https://picsum.photos/50/60/?image=511",
       "components": [
@@ -115,7 +115,7 @@
     },
     {
       "name": "blogPost",
-      "title": "Health effects of friendship",
+      "title": "Blog post",
       "isIndex": false,
       "preview": "https://picsum.photos/50/60/?image=951",
       "components": [
