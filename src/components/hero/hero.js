@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Hero = ({ data: { heading, description }, elemId }) => (
-  <section className="generic-banner relative" id="{elemId}">
+  <section className="generic-banner relative" id={elemId}>
     <div className="container">
       <div className="row height align-items-center justify-content-center">
         <div className="col-lg-10">
