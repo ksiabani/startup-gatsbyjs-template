@@ -64,6 +64,7 @@ const query = graphql`
           components {
             name
             title
+            position
             data {
               heading
               description
